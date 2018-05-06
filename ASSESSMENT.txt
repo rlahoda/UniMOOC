@@ -1,0 +1,22 @@
+Essential info
+
+Project File Structure
+
+Database Info
+
+
+
+
+
+
+
+
+
+Database Name: drupal8
+Database Username: drupal8
+Database Password: drupal8
+Host: database
+Port: 3306
+Drupal info:
+  Admin login: Admin
+  Admin Password: Admin1.
