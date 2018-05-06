@@ -1,0 +1,8 @@
+# OSX Folder Attributes
+.DS_Store
+
+# Temporary Files
+*.tmp *~
+
+# Sass Cache Files
+.sass-cache
