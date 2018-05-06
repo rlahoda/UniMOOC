@@ -9,6 +9,13 @@ Database Info
 
 
 
+Topic areas
+  The topic areas are a taxonomy set to allow for sorting and filtering
+  Each term has the alias of /topics/TAXONOMYTERM
+
+Difficulty Levels
+  The difficulty levels are a taxonomy set to allow for sorting and filtering
+  Each term has the alias of /topics/difficulty/TAXONOMYTERM
 
 
 
