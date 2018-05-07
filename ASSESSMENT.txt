@@ -4,9 +4,32 @@ Project File Structure
 
 Database Info
 
+Content view
+  -Added moderation state
+  -Added translation language
+  -added translation outdated
+  -added link to translate
+  -filtered out any that aren't the default translation
+  -
+
+-Left sidebar listing of topic areas
 
 
 
+Courses
+  -title field label changed to "course title" for clarity
+  Topic Area - required, select list,
+  Difficulty Level - required, select list,
+  Introductory text - plain text for formatting to be controlled by theme
+  Course language - taxonomy term
+  Primary image -
+  Detailed course description -
+  Optional video - not just one video because of how most organizations work and the likelihood of someone adding more videos
+  Course downloads -
+  Signup link -
+  External links - link text required for user clarity, both internal and external links because sometimes there might be internal information on another page they will want to reference
+  Cost of the course - decimal, 2 digits to the right of decimal, preceding $ will be added in template based on choice of currency
+  -requiring preview before submit to ensure correct content
 
 
 Topic areas
