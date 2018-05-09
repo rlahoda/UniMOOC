@@ -6,7 +6,10 @@ Contents:
   Installed Modules
     Notes
     Module List
+    Field Types
   Site Structure
+    Front Page
+    General Page Design
     Blocks
   Content Types
     Notes
@@ -16,6 +19,8 @@ Contents:
     View Modes
     Media Types
   Taxonomies
+    Notes
+    Vocabulary Listing
   Views
   Roles
   Multilingual
@@ -65,18 +70,17 @@ Drupal
 
 ----------------------------------
 Installed Modules
-  Notes:
-    Normally I try to only install modules that have a full release. This prevents most issues with compatibility and other random errors. In this case I tried to install and use the Entity Browser for use with selecting images for the course listing. However, I was unable to get this functioning due to an upload error that I couldn't get rid of. The Entity Browser has a full release, however some of the associated modules with it are not, including Dropzonejs and Entity Embed. I suspect with additional time and troubleshooting I could have figured out the file upload problem and gotten it working, however for the purposes of this assessment, I elected to find an alternative. Further explanation about this and the editorial experience will be listed below with the description of the content type.
+  Normally I try to only install modules that have a full release. This prevents most issues with compatibility and other random errors. In this case I tried to install and use the Entity Browser for use with selecting images for the course listing. However, I was unable to get this functioning due to an upload error that I couldn't get rid of. The Entity Browser has a full release, however some of the associated modules with it are not, including Dropzonejs and Entity Embed. I suspect with additional time and troubleshooting I could have figured out the file upload problem and gotten it working, however for the purposes of this assessment, I elected to find an alternative. Further explanation about this and the editorial experience will be listed below with the description of the content type.
 
-    Modules that do not have a full release are noted as such.
+  Modules that do not have a full release are noted as such.
 
-    All modules were installed via Composer, except for the Flag module. Apparently that module doesn't exist on packagist and is currently listed as a "virtual package". So that module was installed manually.
+  All modules were installed via Composer, except for the Flag module. Apparently that module doesn't exist on packagist and is currently listed as a "virtual package". So that module was installed manually.
 
-    The Flag module is used to add the wishlist capability. Despite being in alpha, it appears to be stable. Further testing might be necessary to verify that it would continue to work in a production situation.
+  The Flag module is used to add the wishlist capability. Despite being in alpha, it appears to be stable. Further testing might be necessary to verify that it would continue to work in a production situation.
 
-    Honeypot is used for basic spam filtering on the user registration form. A more robust solution might be necessary in the future, but this module is minimally intrusive and would be a good starting point for potential future protection. If possible, I try to keep the user experience as free from disruptions as possible and using a Captcha form or similar would add user frustration. After the site is launched I would monitor the registrations to see if there are spam problems with the user registration process and if there are, we can consider adding more robust protection.
+  Honeypot is used for basic spam filtering on the user registration form. A more robust solution might be necessary in the future, but this module is minimally intrusive and would be a good starting point for potential future protection. If possible, I try to keep the user experience as free from disruptions as possible and using a Captcha form or similar would add user frustration. After the site is launched I would monitor the registrations to see if there are spam problems with the user registration process and if there are, we can consider adding more robust protection.
 
-    The requirements listed a link to register for the courses. I assumed, based on the requirement wording, that the registration would be done on the client's system and not through this site. So I did not install the Webform module that I would have otherwise used for that purpose.
+  The requirements listed a link to register for the courses. I assumed, based on the requirement wording, that the registration would be done on the client's system and not through this site. So I did not install the Webform module that I would have otherwise used for that purpose.
 
   Module List:
     Admin Toolbar
@@ -103,17 +107,17 @@ Installed Modules
     Token
     Honeypot
 
-  Field Types:
-    Address
-    Datetime
-    Datetime Range
-    File
-    Image
-    Link
-    Options
-    Telephone
-    Text
-    Video embed field
+    Field Types
+      Address
+      Datetime
+      Datetime Range
+      File
+      Image
+      Link
+      Options
+      Telephone
+      Text
+      Video embed field
 
 
 
@@ -121,7 +125,7 @@ Installed Modules
 Site Structure
   The site is not very deeply laid out due to the requirements only listing the need for course listings, course pages, and a front page (not specified but assumed).
 
-  Front page:
+  Front page
     Courses - This is a filterable view page with all of the courses listed and filters available to filter by price, topic, and difficulty.
       Course Topic Areas - On the front page there are links to the four topic areas which lead to taxonomy pages listing the courses available in each of the topic areas
         (individual course listings) - the individual course pages.
@@ -135,140 +139,135 @@ Site Structure
       -The page content
     -On a user page there is also a right sidebar with the wishlist content.
 
-  Blocks:
-
-
 
 ----------------------------------
 Content Types
-  Notes:
-    There is only one custom content type for this project based on the requirements. It's called "Course" and covers the information listed in the requirements.
+  There is only one custom content type for this project based on the requirements. It's called "Course" and covers the information listed in the requirements.
 
-    For the requirement that the editor be able to recenter the image, I wasn't sure the best way to make that happen since there wasn't a design involved. Depending on the page layout I would approach the requirement differently. The way I generally have approached this, especially if the image is going to be used as a hero image on the page, would be to set the image as the background of a div then add a dropdown for the editor to choose the focal area. This would then be used in the template to add an appropriate CSS class to the image to change the background position accordingly. While I tend to lean towards giving the editor as much control as possible, I would expect that giving them options for top-left, top-center, top-right, middle-left, middle, middle-right, bottom-left, bottom-center, bottom-right would be enough choice. For the purposes of this assessment, I had the image stay just as a normal image on the page, though it is using the Core responsive image setting, with the expectation that it could change based on the design requirements.
+  For the requirement that the editor be able to recenter the image, I wasn't sure the best way to make that happen since there wasn't a design involved. Depending on the page layout I would approach the requirement differently. The way I generally have approached this, especially if the image is going to be used as a hero image on the page, would be to set the image as the background of a div then add a dropdown for the editor to choose the focal area. This would then be used in the template to add an appropriate CSS class to the image to change the background position accordingly. While I tend to lean towards giving the editor as much control as possible, I would expect that giving them options for top-left, top-center, top-right, middle-left, middle, middle-right, bottom-left, bottom-center, bottom-right would be enough choice. For the purposes of this assessment, I had the image stay just as a normal image on the page, though it is using the Core responsive image setting, with the expectation that it could change based on the design requirements.
 
-    For the image selection, I had planned on using Entity Browser to upload, select, and place the images, but I kept running into an error in the process. So I set the image selection widget to a select list. This means that the editorial experience is not what I would prefer. I was hoping to allow the editor to simply upload an image directly as they are creating a new node with this content type, but due to the above mentioned issue with Entity Browser, the process is a bit more involved. So to insert an image, the editor would first have to go to Content > Add Media > Image then upload the image there. Once the image is ready, the editor can go to add a new Course and when they get to the Primary Image field, they will see their new image listed.
+  For the image selection, I had planned on using Entity Browser to upload, select, and place the images, but I kept running into an error in the process. So I set the image selection widget to a select list. This means that the editorial experience is not what I would prefer. I was hoping to allow the editor to simply upload an image directly as they are creating a new node with this content type, but due to the above mentioned issue with Entity Browser, the process is a bit more involved. So to insert an image, the editor would first have to go to Content > Add Media > Image then upload the image there. Once the image is ready, the editor can go to add a new Course and when they get to the Primary Image field, they will see their new image listed.
 
-    In the past I have just had this as a file upload field, which allows the editor the ease of adding an image during the process, but by trying to use the new Media Entity functionality in Core, this method is no longer ideal. Doing it that way means the image is not available for reuse which causes editorial frustration. Since this site is still in development I decided that it would be better to hand off the site to begin work on the theme and while that's being done, I or someone else could continue to work on the Entity Browser issue and hopefully have it working correctly before the site was handed over to the client. The end result for the themer is the image and the way the image is displayed should not change if the method of choosing the image changes. If there was a change, this would be communicated as appropriate to the themer to be able to tweak their files as necessary.
+  In the past I have just had this as a file upload field, which allows the editor the ease of adding an image during the process, but by trying to use the new Media Entity functionality in Core, this method is no longer ideal. Doing it that way means the image is not available for reuse which causes editorial frustration. Since this site is still in development I decided that it would be better to hand off the site to begin work on the theme and while that's being done, I or someone else could continue to work on the Entity Browser issue and hopefully have it working correctly before the site was handed over to the client. The end result for the themer is the image and the way the image is displayed should not change if the method of choosing the image changes. If there was a change, this would be communicated as appropriate to the themer to be able to tweak their files as necessary.
 
-    The Course Downloads field has the same issue. The difference is that Course Downloads allows for multiple files to be selected. Instructions for selecting more than one file are included in the help text for that field.
+  The Course Downloads field has the same issue. The difference is that Course Downloads allows for multiple files to be selected. Instructions for selecting more than one file are included in the help text for that field.
 
-    The Course content type also has a workflow attached to it of "Draft" -> "Published" -> "Archived". This is primarily to allow the editor to make draft changes to a page before publishing it live and allow for editorial flexibility while updating the site.
+  The Course content type also has a workflow attached to it of "Draft" -> "Published" -> "Archived". This is primarily to allow the editor to make draft changes to a page before publishing it live and allow for editorial flexibility while updating the site.
 
-    The first language selector at the top of the page is to specify the language that the editor is entering the course in. The requirements specified that the admin area be in English so this is to accomodate that someone using the admin area in English could be entering a course in another language. It also means that someone using the admin area in another language can specify that they are entering an English course.
-
+  The first language selector at the top of the page is to specify the language that the editor is entering the course in. The requirements specified that the admin area be in English so this is to accomodate that someone using the admin area in English could be entering a course in another language. It also means that someone using the admin area in another language can specify that they are entering an English course.
 
 
+  Fields:
+  Each field is followed by - machine_name - {Additional information about the field}
   Course - course - {
-    Fields:
-      // Each field is followed by - machine_name - {Additional information about the field}
-      Title field label: "Course Title"
-      preview before submitting - optional - this is because having the preview set to "required" tends to frustrate editors with the additional step
-      Display author and date information not checked since courses would not normally need a known author or date of publication
-      Menu settings - not available to add to any menu since these nodes will be a part of the taxonomy pages and the overall course listing, there is no current reason why a "course" would need to have a direct menu link
-      }
-      -Course Cost - field_course-cost - {
-        Field type: number (decimal)
-        Required field
-        Users may translate this field
-        No default values
-        Holds up to 10 digits with 2 digits to the right of the decimal
-        No Prefix or suffix specified - The currency symbol would be added at the template level to add flexibility in displaying multiple currencies. See Taxonomies below for further explanation
-        1 allowed value
-      }
-      -Course Description - body - {
-        Field type: Text (formatted, long, with summary)
-        Required field
-        Users may translate this field
-        No default value
-        Summary input not allowed
-      }
-      -Course Downloads - field_course_downloads - {
-        Field Type: Entity reference
-        Entity Referenced: Media
-        Not a required field
-        Users may translate this field
-        Media Type: File
-        Sort by: Name - Ascending
-        No default values
-        Unlimited values
-      }
-      -Course Language - field_course_language -	{
-        Field Type: Entity reference
-        Entity Referenced: Taxonomy Term
-        Required field
-        Users may translate this field
-        No default values
-        Vocabulary: Languages
-        1 allowed value
-      }
-      -Course Registration Link - field_register_now - {
-        Field Type: Link
-        Required field
-        Users may translate this field
-        Default value: URL - "<front>", Link text - "Register for this course"
-        Internal and external links allowed
-        Link text required
-        1 allowed value
-      }
-      -Currency Type - field_currency_type - {
-        Field Type: Entity reference
-        Entity Referenced: Taxonomy Term
-        Required field
-        Users may translate this field
-        Default value: "US Dollars"
-        Vocabulary: Currency Type
-        1 allowed value
-      }
-      -Difficulty Level - field_difficulty_level - {
-        Field Type: Entity reference
-        Entity Referenced: Taxonomy Term
-        Required field
-        Users may translate this field
-        No default values
-        Vocabulary: Difficulty Level
-        1 allowed value
-      }
-      -External Information - field_external_information - {
-        Field Type: Link
-        Not a required field
-        Users may translate this field
-        No default values
-        Internal and external links allowed
-        Link text required
-        Unlimited allowed values
-      }
-      -Introductory Text - field_introductory_text - {
-        Field Type: Text (plain, long)
-        Required field
-        Users may translate this field
-        No default value
-        1 allowed value
-      }
-      -Primary Image - field_primary_image - {
-        Field Type: Entity reference
-        Entity referenced: Media
-        Not a required field
-        Users may not translate this field
-        No default values
-        Media type: Image
-        1 allowed value
-      }
-      -Topic Area - field_topic_area - {
-        Field Type: Entity reference
-        Entity Referenced: Taxonomy Term
-        Required field
-        Users may translate this field
-        Vocabulary: Topic Areas
-        No default values
-        1 allowed value
-      }
-      -Video Embed - field_video_embed - {
-        Field Type: Video Embed
-        Not a required field
-        Users may translate this field
-        No default values
-        Unlimited allowed values
-      }
+    Title field label: "Course Title"
+    preview before submitting - optional - this is because having the preview set to "required" tends to frustrate editors with the additional step
+    Display author and date information not checked since courses would not normally need a known author or date of publication
+    Menu settings - not available to add to any menu since these nodes will be a part of the taxonomy pages and the overall course listing, there is no current reason why a "course" would need to have a direct menu link
+    }
+    -Course Cost - field_course-cost - {
+      Field type: number (decimal)
+      Required field
+      Users may translate this field
+      No default values
+      Holds up to 10 digits with 2 digits to the right of the decimal
+      No Prefix or suffix specified - The currency symbol would be added at the template level to add flexibility in displaying multiple currencies. See Taxonomies below for further explanation
+      1 allowed value
+    }
+    -Course Description - body - {
+      Field type: Text (formatted, long, with summary)
+      Required field
+      Users may translate this field
+      No default value
+      Summary input not allowed
+    }
+    -Course Downloads - field_course_downloads - {
+      Field Type: Entity reference
+      Entity Referenced: Media
+      Not a required field
+      Users may translate this field
+      Media Type: File
+      Sort by: Name - Ascending
+      No default values
+      Unlimited values
+    }
+    -Course Language - field_course_language -	{
+      Field Type: Entity reference
+      Entity Referenced: Taxonomy Term
+      Required field
+      Users may translate this field
+      No default values
+      Vocabulary: Languages
+      1 allowed value
+    }
+    -Course Registration Link - field_register_now - {
+      Field Type: Link
+      Required field
+      Users may translate this field
+      Default value: URL - "<front>", Link text - "Register for this course"
+      Internal and external links allowed
+      Link text required
+      1 allowed value
+    }
+    -Currency Type - field_currency_type - {
+      Field Type: Entity reference
+      Entity Referenced: Taxonomy Term
+      Required field
+      Users may translate this field
+      Default value: "US Dollars"
+      Vocabulary: Currency Type
+      1 allowed value
+    }
+    -Difficulty Level - field_difficulty_level - {
+      Field Type: Entity reference
+      Entity Referenced: Taxonomy Term
+      Required field
+      Users may translate this field
+      No default values
+      Vocabulary: Difficulty Level
+      1 allowed value
+    }
+    -External Information - field_external_information - {
+      Field Type: Link
+      Not a required field
+      Users may translate this field
+      No default values
+      Internal and external links allowed
+      Link text required
+      Unlimited allowed values
+    }
+    -Introductory Text - field_introductory_text - {
+      Field Type: Text (plain, long)
+      Required field
+      Users may translate this field
+      No default value
+      1 allowed value
+    }
+    -Primary Image - field_primary_image - {
+      Field Type: Entity reference
+      Entity referenced: Media
+      Not a required field
+      Users may not translate this field
+      No default values
+      Media type: Image
+      1 allowed value
+    }
+    -Topic Area - field_topic_area - {
+      Field Type: Entity reference
+      Entity Referenced: Taxonomy Term
+      Required field
+      Users may translate this field
+      Vocabulary: Topic Areas
+      No default values
+      1 allowed value
+    }
+    -Video Embed - field_video_embed - {
+      Field Type: Video Embed
+      Not a required field
+      Users may translate this field
+      No default values
+      Unlimited allowed values
+    }
 
 
   Form Display order:
@@ -327,42 +326,37 @@ Content Types
 
 ----------------------------------
 Taxonomies
-  Notes:
-    There are 4 taxonomies set for this site, three are fairly obvious and are distinctly spelled out in the requirements. The fourth was for future site growth. Each of these are just the term, no additional fields added. All have been translated into French and German so users viewing the site in those languages will see the terms in their own language.
+  There are 4 taxonomies set for this site, three are fairly obvious and are distinctly spelled out in the requirements. The fourth was for future site growth. Each of these are just the term, no additional fields added. All have been translated into French and German so users viewing the site in those languages will see the terms in their own language.
 
-    The Currency Type taxonomy is used in the "Course" content type and is used along with the "Course price" field. The reason this is set up as a taxonomy is for the possible future expansion of the site to include the ability to view the prices in different currencies. To allow for this kind of feature, I added the taxonomy that could be used for template-level or scripted logic that would change the numerical value based on the currency entered. I.e., if the course was $100 but the user is in Europe and wants to see it in Euros, they could click a button and see it listed as 90€ or something like that. This comes from the requirement that the site be in French and German as well as English. Even though it appears the school is located in the United States, the multilingual focus of the site indicates an international perspective in the client that could necessitate further growth to accommodate international users. This is similar to the requirement that there be a listing of the course language of either English, French, or German. If the course is originally taught in a different language, there's the possibility that it's originating elsewhere as well, perhaps as a partnership with a European university or something. So the original price might be US Dollars, Euros, Canadian Dollars, etc. This is an example of future-proofing that I like to try to build into any project I do. If the client wants to go this direction, the infrastructure is there, if not, there is no change to the user or the editorial experience.
+  The Currency Type taxonomy is used in the "Course" content type and is used along with the "Course price" field. The reason this is set up as a taxonomy is for the possible future expansion of the site to include the ability to view the prices in different currencies. To allow for this kind of feature, I added the taxonomy that could be used for template-level or scripted logic that would change the numerical value based on the currency entered. I.e., if the course was $100 but the user is in Europe and wants to see it in Euros, they could click a button and see it listed as 90€ or something like that. This comes from the requirement that the site be in French and German as well as English. Even though it appears the school is located in the United States, the multilingual focus of the site indicates an international perspective in the client that could necessitate further growth to accommodate international users. This is similar to the requirement that there be a listing of the course language of either English, French, or German. If the course is originally taught in a different language, there's the possibility that it's originating elsewhere as well, perhaps as a partnership with a European university or something. So the original price might be US Dollars, Euros, Canadian Dollars, etc. This is an example of future-proofing that I like to try to build into any project I do. If the client wants to go this direction, the infrastructure is there, if not, there is no change to the user or the editorial experience.
 
-    This kind of enhancement, if the client wants it, can be a small way to give the client more than they expected for a minimal additional effort. If the option was offered to the client and they want to go with it, it's a way to show them how we're looking out for them. If the client doesn't want the enhancement, there is no negative impact on the site for the editor or user. For now, the field in the content type is defaulted to the singular term "US Dollars" so the editorial experience is unchanged from simply entering the number alone.
+  This kind of enhancement, if the client wants it, can be a small way to give the client more than they expected for a minimal additional effort. If the option was offered to the client and they want to go with it, it's a way to show them how we're looking out for them. If the client doesn't want the enhancement, there is no negative impact on the site for the editor or user. For now, the field in the content type is defaulted to the singular term "US Dollars" so the editorial experience is unchanged from simply entering the number alone.
 
-  Vocabulary Listing:
-  (The machine name for the vocabulary is listed after the name. The number in parenthesis is the term ID number for use when templating)
-    -Difficulty Level - difficulty_level
-      -Advanced (7)
-      -Intermediate (6)
-      -Introductory (5)
-      -Specialty (8)
+Vocabulary Listing:
+(The machine name for the vocabulary is listed after the name. The number in parenthesis is the term ID number for use when templating)
+  -Difficulty Level - difficulty_level
+    -Advanced (7)
+    -Intermediate (6)
+    -Introductory (5)
+    -Specialty (8)
 
-    -Languages - languages
-      -English (12)
-      -French (13)
-      -German (14)
+  -Languages - languages
+    -English (12)
+    -French (13)
+    -German (14)
 
-    -Topic Areas - topic_areas
-      -Business Finance (2)
-      -Business Management (1)
-      -Entrepreneurship (4)
-      -Innovation (3)
+  -Topic Areas - topic_areas
+    -Business Finance (2)
+    -Business Management (1)
+    -Entrepreneurship (4)
+    -Innovation (3)
 
-    -Currency Type - currency_type
-      -US Dollars (9)
-
-
+  -Currency Type - currency_type
+    -US Dollars (9)
 
 ----------------------------------
 Views
   I added some additional views and edited some of the default views for editorial and user enhancements.
-
-  // Each view is listed as ViewName - machine_name - TypeOfDisplay (path/to/display)
 
   Content - content - Page(/admin/content)
     For editorial clarity, I added additional information to the general content view. The primary reason was to remove redundant nodes for the additional languages. So instead of listing all of the nodes, which would show three of the same item (one for each language), I filtered out any that weren't the originally entered version. This means that if a course was added in French (This was done with "La Finance 401") then that version shows up in the content listing. The reason I did this and not always having the default site language is because the original master should always be the starting point. If the editor wants to access the other language versions, they can click the "Translate" link in the content listing row and change the other language versions. My main intent here is to ensure that the originally entered language has priority since that's what the other translations will be based off. The editor can always change whatever language they want or need to, but I felt that since the original language version is the one that the others are linked back to as derivatives of the original, that original should be the one viewed and prioritized. Obviously if the client or team felt this should be different, I would change it, but this is my initial preference.
@@ -466,40 +460,10 @@ Views
 
 
 ----------------------------------
-Roles
-  Admin
-  -Default administrator user type
-  Permissions:
-    -All
-
-  Authenticated User
-    -Default user type assigned to a new user signing up on the site
-    Permissions:
-      -Use the site-wide contact form
-      -Flag Wishlist item
-      -Unflag Wishlist item
-      -View media
-      -View published content
-      -Use search
-      -Cancel own user account
-      -Change own username
-      -View user information
-
-  Anonymous User
-    Default non-logged-in user type
-    Permissions:
-      -Use the site-wide contact form
-      -View media
-      -View published content
-      -Use search
-
-
-
-----------------------------------
 Multilingual
   First off, I will start by apologizing to anyone who is fluent in either French or German and reading this site. I'm learning French, but I'm far from fluent so the entirety of the translations are done in Google Translate. I chose to substitute "Class" for "Course" in German because I wasn't sure the term was translating well. In an actual project I would expect to receive correctly translated terminology or have an external partner or the client translate the materials to the appropriate language(s).
 
-  Drupal 8's built-in multilingual capabilities are very powerful and comprehensive, allowing me to easily add the multiple translations for all of the content of the site. This included the course content for each course node, taxonomy terms, view content, content type fields, block content, etc. I tried to ensure that there wouldn't be any place where English would show up that it shouldn't have.
+  Drupal 8's built-in multilingual capabilities are very powerful and comprehensive, allowing me to easily add the multiple translations for all of the content of the site. This included the course content for each course node, taxonomy terms, view content, content type fields, block content, etc. I tried to ensure that there wouldn't be any place where English would show up that it shouldn't have. There was only one part that I couldn't figure out a way around. In the "Courses" view for the grouped filter for the course prices, I created a filter labeled "All Prices" to show all the prices. I haven't figured out a way to translate that value. There is a module "Better Exposed Filters" that is in Alpha that would solve this problem by, among other things, add a "Reset" button to the filters. Since this is currently in Alpha, I would prefer to wait for a more stable release, especially since this is non-essential functionality.
 
   At the top of the page on every page is the language selector menu. This works no matter if a user is logged in or not.
 
