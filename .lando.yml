@@ -1,13 +1,42 @@
 # Drupal 8 recipe
 name: UniMOOC
 recipe: drupal8
+
 config:
   php: '7.1'
   via: nginx
   webroot: drupal
   drush: composer
-# If using Ubuntu or possibly other systems and the Database service doesn't start correctly, uncomment the two lines below, enter "lando rebuild" in the command line then 
-#  database:
-#    type: mysql:5.7
+  # If you're on Ubuntu and possibly other Linux systems and the Database Server doesn't start correctly, uncomment the line below, run "lando rebuild", then "lando start"
+  # database: mysql:5.7
 
   xdebug: true
+
+services:
+  appserver:
+    build:
+      appserver: cd $LANDO_WEBROOT && composer install
+  # Optionally mix in your own config files
+  #
+  # If ommitted this will use "sane defaults" for your recipe type
+  # conf:
+
+    # For more information on setting these files check out the documentation
+    # and examples
+    #
+    # Docs: https://docs.devwithlando.io/services/php.html
+    # Examples: https://github.com/lando/lando/tree/master/examples
+    #
+    # server: config/drupal8.conf
+    # php: config/php.ini
+
+    # For more information on setting these files check out the documentation
+    # and examples for the relevant services:
+    #
+    # MySQL: https://docs.devwithlando.io/services/mysql.html
+    # MariaDB: https://docs.devwithlando.io/services/mariadb.html
+    # PostGres: https://docs.devwithlando.io/services/postgres.html
+    #
+    # Examples: https://github.com/lando/lando/tree/master/examples
+    #
+    # database: config/mysql

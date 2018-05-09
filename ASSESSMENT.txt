@@ -1,7 +1,7 @@
 Contents:
   Overview
   Repo Folder Structure
-  Getting the site running
+  Starting the development environment
   Drupal
   Installed Modules
     Notes
@@ -47,14 +47,14 @@ Repo Folder Structure
 
 
 ----------------------------------
-Getting the site running
+Starting the development environment
   ***This installation assumes you have Lando installed. In a normal team situation, I would assume there is a common local development environment across the entire team to ensure consistency when passing files around. Since I don't know what your preferred environment is, I chose Lando as my local development environment because it's fairly straightforward and is becoming more common now.***
-  **If you do not have Lando installed, please download and install the appropriate version for your computer**
+  **If you do not have Lando installed, please download it at https://github.com/lando/lando/releases and install the appropriate version for your computer**
   To start the site:
-    import the DB
-    Type: lando start
-      Lando should go through its process to start the environment then give you the appropriate URLs for accessing the environment
-      If everything went correctly, you should be greeted with the front page of "Generic University Business School"
+    $lando start
+    Lando will install the environment then get it started
+    $lando db-import unimooc.sql.gz
+    Navigate to the appropriate url that Lando tells you when it finishes starting and you should see the front page of the site
 
   To stop the environment:
     On the command line, type: lando poweroff
@@ -154,7 +154,7 @@ Content Types
 
   The Course content type also has a workflow attached to it of "Draft" -> "Published" -> "Archived". This is primarily to allow the editor to make draft changes to a page before publishing it live and allow for editorial flexibility while updating the site.
 
-  The first language selector at the top of the page is to specify the language that the editor is entering the course in. The requirements specified that the admin area be in English so this is to accomodate that someone using the admin area in English could be entering a course in another language. It also means that someone using the admin area in another language can specify that they are entering an English course.
+  The first language selector at the top of the page is to specify the language that the editor is entering the course in. The requirements specified that the admin area be in English so this is to accommodate that someone using the admin area in English could be entering a course in another language. It also means that someone using the admin area in another language can specify that they are entering an English course.
 
 
   Fields:
@@ -495,7 +495,7 @@ Deliverables
     If the user is on a course and changes languages, the same course displays, but in the selected language
     -Steps to test:
       -On the homepage, on the top menu bar, select "Courses"
-      -Scroll down and select "Mangagement 301" (or any other course listed)
+      -Scroll down and select "Management 301" (or any other course listed)
       -At the top right corner, select "Deutsch" and the page will change to German
       -Scroll down, at the beginning of the text blocks above and below the image the text will now say "Auf Deutsch" to indicate it is the German translation
       -At the top right corner, select "Français" and the page will change to French
