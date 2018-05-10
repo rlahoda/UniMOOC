@@ -37,6 +37,23 @@ Contents:
 
 ----------------------------------
 Overview
+  Everyone approaches sitebuilding in a slightly different way. In previous jobs I have been responsible for planning and building out large, very technical projects with no executive vision that required the system being built to be highly flexible and configurable. I have taken that perspective and applied it to many projects since then. When building this site, I try to give the client and designer as much flexibility as possible to create the site they want to build. Based on the requirements, a "Course" seems clearly like a content type. There is a very defined set of content and structure to it so it seems best served as a content type.
+
+  In most marketing departments, there is a desire to have many pages with different structures, contents, etc, so that they can make the site look exciting and inviting. While the courses make sense to have a set pattern, other pages would be better served with more flexible structure. For similar projects I have used the Paragraphs module to give a very high amount of flexibility, but that wouldn't be ideal for this site. When the Paragraphs module is used on a site with a large number of logged in users, it slows everything down because the Paragraph pages don't get cached for logged in users. So a different solution would be in order.
+
+  Since this project didn't have a design or complete requirements with it, I wouldn't want to install or configure any specific layout approach until I was able to see what direction and intent the design has. This could be achieved with Panels, the new layout capability in Core, or other options. If I was on a team working on this project I would want to see what other options have been used and the pros and cons for them so that we can ensure the best course of action.
+
+  I have tried to be as clear and complete in my documentation as possible, giving explanation where necessary to help you understand my process and reasoning. I have installed a number of modules that are not fully being used yet because they are ones that I would want to have installed when the site is ready for launch. If there was more information in the requirements I could have configured them, but for now, they are just installed and ready. These include the Metatag module, Google Analytics (assuming the client was using GA for their web analytics, if they used a different platform I would have installed the appropriate module for that), and Redirect, among others. My intent is that the site would be as "finished" as possible before going to be themed so that the themer would be able to see how things are going to be set up. This would also include potentially rearranging the blocks and menus to match the potential future design.
+
+  In an effort to prepare the site for theming, I installed the UIkit base theme. This is a flexible base theme taking advantage of the UIkit front-end design framework. I realize that the site might not end up being built on this base theme, but I wanted to have something other than Bartik as the base theme and to prepare the site for general theming. In an actual production situation, I would assume that a base theme would have been decided before the site building was started, or there might be a preferred base theme that the themer likes to start from. In any case, it's not a big deal to install a new base theme and remove this one, it was more of a matter of making sure the site is ready to be themed. Also, to that end, I went ahead and turned on Twig debugging, removed the JS and CSS aggregation, set Kint as the debugging tool, and set the theme registry to be rebuilt on every page load.
+
+  Hopefully this documentation is clear and understandable. I have the TOC at the top for your reference throughout the document. Steps for starting the site and logins for the different user roles are listed below.
+
+  Thank you again for the opportunity to put this together for you.
+
+  Sincerely,
+
+  Rob Lahoda
 
 
 
