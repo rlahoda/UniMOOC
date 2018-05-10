@@ -7,15 +7,14 @@ config:
   via: nginx
   webroot: drupal
   drush: composer
-  # If you're on Ubuntu and possibly other Linux systems and the Database Server doesn't start correctly, uncomment the line below, run "lando rebuild", then "lando start"
-  # database: mysql:5.7
+  database: mysql:5.7
 
   xdebug: true
 
-services:
-  appserver:
-    build:
-      appserver: cd $LANDO_WEBROOT && composer install
+# services:
+#   appserver:
+#     build:
+#       appserver: cd $LANDO_WEBROOT && composer install
   # Optionally mix in your own config files
   #
   # If ommitted this will use "sane defaults" for your recipe type
@@ -30,7 +29,7 @@ services:
     # server: config/drupal8.conf
     # php: config/php.ini
 
-    # For more information on setting these files check out the documentation
+    # For more informvdsdvsddsdvdation on setting these files check out the documentation
     # and examples for the relevant services:
     #
     # MySQL: https://docs.devwithlando.io/services/mysql.html
