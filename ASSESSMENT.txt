@@ -381,22 +381,22 @@ Content Types
 
 
   Form Display order:
-    Language - Editorial widget: Language select (This is specifying the language the course description is being written in for instances when the editor is entering the content in a language other than English)
-    Course Title                   Editorial widget: Textfield - size: 60
-    Topic Area                     Editorial widget: Select List
-    Course Language                Editorial widget: Select List
-    Difficulty Level               Editorial widget: Select List
-    Course Registration Link       Editorial widget: Link - No placeholders
-    Introductory Text              Editorial widget: Text Area (multiple rows) - Number of rows: 5
-    Primary Image                  Editorial widget: Select list
-    Course Description             Editorial widget: Text area with a summary - Number of rows - 9, Number of summary rows - 3
-    Video Embed                    Editorial widget: Video Textfield
-    Course Downloads               Editorial widget: Select List
-    External Information           Editorial widget: Link - No placeholders
-    Translation                    Editorial widget: (n/a)
-    Course Cost                    Editorial widget: Number Field - No placeholder
-    Currency Type                  Editorial widget: Select list
-    Moderation state               Editorial widget: Moderation state
+    Language                    Editorial widget: Language select (This is specifying the language the course description is being written in for instances when the editor is entering the content in a language other than English)
+    Course Title                Editorial widget: Textfield - size: 60
+    Topic Area                  Editorial widget: Select List
+    Course Language             Editorial widget: Select List
+    Difficulty Level            Editorial widget: Select List
+    Course Registration Link    Editorial widget: Link - No placeholders
+    Introductory Text           Editorial widget: Text Area (multiple rows) - Number of rows: 5
+    Primary Image               Editorial widget: Select list
+    Course Description          Editorial widget: Text area with a summary - Number of rows - 9, Number of summary rows - 3
+    Video Embed                 Editorial widget: Video Textfield
+    Course Downloads            Editorial widget: Select List
+    External Information        Editorial widget: Link - No placeholders
+    Translation                 Editorial widget: (n/a)
+    Course Cost                 Editorial widget: Number Field - No placeholder
+    Currency Type               Editorial widget: Select list
+    Moderation state            Editorial widget: Moderation state
 
 
   View Modes:
