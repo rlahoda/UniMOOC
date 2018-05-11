@@ -109,6 +109,8 @@ User Accounts
 Drupal
   For this project, I installed Drupal 8. It is currently on version 8.5.3
 
+I chose Drupal 8 for this project due to the very powerful multilingual capabilities built into Core. In addition, it will have the longest supported life for the client, giving an extended time for them to take advantage of the site before any major site upgrades. Drupal 8 also is on an upgrade cycle bringing many new features into Core meaning that it will continue to bring further cost-effectiveness for the client over time.
+
 
 
 ----------------------------------
