@@ -1,7 +1,7 @@
 # Contents: #
 
-  * [Overview](#Overview)
-  * [Repo Folder Structure](#repo-folder_structure)
+  * [Overview](#overview)
+  * [Repo Folder Structure](#repo-folder-structure)
   * [Starting the development environment](#starting-the-development-environment)
   * [User Accounts](#user-accounts)
   * [Drupal](#drupal)
