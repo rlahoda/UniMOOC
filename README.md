@@ -28,7 +28,7 @@
   * [Roles](#roles)
     * Notes
     * Roles and Permissions
-  * [User Account Settings](#user_account-settings)
+  * [User Account Settings](#user-account-settings)
   * [Multilingual](#multilingual)
   * [Deliverables](#deliverables)
     * Themable Site
