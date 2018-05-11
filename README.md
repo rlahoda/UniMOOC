@@ -1,19 +1,19 @@
 # Contents: #
 
   * [Overview](#Overview)
-  * [Repo Folder Structure](#repo_folder_structure)
-  * [Starting the development environment](#starting_the_development_environment)
-  * [User Accounts](#user_accounts)
+  * [Repo Folder Structure](#repo-folder_structure)
+  * [Starting the development environment](#starting-the-development-environment)
+  * [User Accounts](#user-accounts)
   * [Drupal](#drupal)
-  * [Installed Modules](#installed_modules)
+  * [Installed Modules](#installed-modules)
     * Notes
     * Module List
     * Field Types
-  * [Site Structure](#site_structure)
+  * [Site Structure](#site-structure)
     * Front Page
     * General Page Design
     * Blocks
-  * [Content Types](#content_types)
+  * [Content Types](#content-types)
     * Notes
     * Content Type
       * Fields
@@ -28,7 +28,7 @@
   * [Roles](#roles)
     * Notes
     * Roles and Permissions
-  * [User Account Settings](#user_account_settings)
+  * [User Account Settings](#user_account-settings)
   * [Multilingual](#multilingual)
   * [Deliverables](#deliverables)
     * Themable Site
@@ -37,7 +37,7 @@
     * Course View
     * Listing Page
     * Registered Users
-  * [Technical Notes](#technical_notes)
+  * [Technical Notes](#technical-notes)
 
 
 
